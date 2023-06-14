@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white-background);
+}
+.home-page {
+    background-image: url(../assets/vetor-top-right.svg);
+    background-repeat: no-repeat;
+    background-position: right top;  
+}
+.cadastro-page {
+    background-image: url(../assets/vetor-top-right.svg);
+    background-repeat: no-repeat;
+    background-position: right top;  
+}
+.consulta-page {
+    background-image: url(../assets/vetor-bottom-right.svg);
+    background-repeat: no-repeat;
+    background-position: right bottom;  
+}
+
+.cadastro-usuario-page {
+    background-image: url(../assets/vetor-top-right.svg);
+    background-repeat: no-repeat;
+    background-position: right top;  
+}

@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&family=Sriracha&display=swap');
+
+:root {
+  --cor00: #424d67;
+  --cor01: #dce1eb;
+  --cor02: #3146d0;
+  --cor03: #a4b0c3;
+  --cor04: #4f63d7;
+  --cor05: #677bec;
+  --fonte-titulo: 'Roboto Mono', Arial, sans-serif;
+}
+
+body {
+  background-color: var(--cor01);
+  background-image: url(../../assets/Vector_10.svg), url(../../assets/Vector_9.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-position: left bottom, right top;
+}
+
+section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+}
+
+div#container {
+  position: absolute;
+  width: 480px;
+  height: 470px;
+  background-color: var(--cor00);
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+}
+
+header > img {
+  padding-top: 40px;
+}
+
+header > h1 {
+  font: normal 900 30px var(--fonte-titulo);
+  font-size: 2.2em;
+  margin-top: -15px;
+  padding-bottom: 22px;
+  background-image: linear-gradient(to right, white, rgb(134, 134, 134));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#email, #password {
+  margin: 15px;
+  padding: 14px;
+  border-radius: 15px;
+  width: 330px;
+}
+
+#login-submit {
+  background-color: var(--cor05);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 140px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid rgba(134, 134, 134, 0);
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.144);  
+}
+
+#login-submit:hover {
+  cursor: pointer;
+}
+
+#login-submit:active {
+  border: 2px solid rgba(0, 0, 0, 0.215);
+  background-color: var(--cor04);
+}
+
+#help > a{
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #a4b0c3;
+  background-clip: text;
+  font-size: 0.9em;
+}
+
+#help > a:hover {
+  text-decoration: underline;
+  font-weight: bold;
+}

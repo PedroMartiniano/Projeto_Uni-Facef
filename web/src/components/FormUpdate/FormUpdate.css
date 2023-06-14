@@ -1,0 +1,50 @@
+.form-update {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-update-item {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 18px;
+    padding: 12px 0;
+}
+.form-update-item input {
+    width: 250px;
+    height: 24px;
+    margin-left: 20px;
+    border: 1px solid #A4B0C3;
+    border-radius: 8px;
+}
+.form-update-item select {
+    width: 200px;
+    height: 30px;
+    margin-left: 20px;
+    border: 1px solid gray;
+    border-radius: 6px;
+    text-align: center;
+    background-color: #FFFFFF;
+    font-family: var(--font-family);
+    font-size: 14px;
+    font-weight: 600;
+}
+.form-update-btn {
+    bottom: 0.5rem;
+    right: 2rem;
+    width: 140px;
+    height: 40px;
+    background-color: #A4B0C3;
+    border: none;
+    border-radius: 15px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 16px auto ;
+}
+.form-update-btn:hover {
+    background-color: #78818F;
+    cursor: pointer;
+}
