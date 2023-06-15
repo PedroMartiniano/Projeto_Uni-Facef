@@ -5,7 +5,7 @@ import api from "../../lib/axios";
 import toast from "react-hot-toast";
 
 /*Função principal do componente de criação de categoria, onde é chamado o componente de dialog do radix-ui e o componente de toast do react-hot-toast. */
-function DialogCreateCategory(props : any) {
+function DialogCreateCategory(props : any) { // eslint-disable-line @typescript-eslint/no-explicit-any
   
     {/*Hook que armazena o valor da categoria. */}
     const [categoria, setCategoria] = useState("");
