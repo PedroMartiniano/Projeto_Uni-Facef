@@ -7,7 +7,7 @@ function DialogUpdate(props: TableData) {
   return (
     <Dialog.Root>
       <Dialog.Trigger value={props.id} type="button">
-        <img src="src\assets\patch-icon.svg" alt="" />
+        <img src="src\assets\Edit.svg" alt="" />
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="modal-overlay" />

@@ -33,7 +33,7 @@ export default function FormUsuario() {
                 : toast.error("As senhas não coincidem!")
         }
         else {
-            toast.error("Usuário já cadastrado!")
+            toast.error("Email já cadastrado!")
         }
     }
 
@@ -48,7 +48,7 @@ export default function FormUsuario() {
                         <label>Email</label>
                         <input
                             type="text"
-                            id="form-email"
+                            id="form-input"
                             placeholder="E-mail"
                             onChange={(change) => setEmail(change.target.value)}
                             required
@@ -58,7 +58,7 @@ export default function FormUsuario() {
                         <label>Nome</label>
                         <input
                             type="text"
-                            id="form-nome"
+                            id="form-input"
                             placeholder="Nome"
                             onChange={(change) => setNome(change.target.value)}
                             required
@@ -68,7 +68,6 @@ export default function FormUsuario() {
                         <label>Senha</label>
                         <input
                             type="password"
-                            id="form-senha"
                             placeholder="Senha"
                             onChange={(change) => setSenha(change.target.value)}
                             required
@@ -78,14 +77,13 @@ export default function FormUsuario() {
                         <label>Confirme sua Senha</label>
                         <input
                             type="password"
-                            id="form-senha"
                             placeholder="Senha"
                             onChange={(change) => setSenhaConf(change.target.value)}
                             required
                         />
                     </li>
                 </ul>
-                <button id="user-submit" type="submit">Cadastrar Usuário</button>
+                <button type="submit">Cadastrar Usuário</button>
             </form>
         </div>
     )

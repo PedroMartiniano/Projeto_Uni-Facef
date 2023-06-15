@@ -4,14 +4,14 @@ main {
     background-color: var(--white-background);
 }
 .home-page {
-    background-image: url(../assets/vetor-top-right.svg);
+    background-image: url(../assets/vetor-bottom-right.svg);
     background-repeat: no-repeat;
-    background-position: right top;  
+    background-position: right bottom;  
 }
 .cadastro-page {
-    background-image: url(../assets/vetor-top-right.svg);
+    background-image: url(../assets/vetor-bottom-right.svg);
     background-repeat: no-repeat;
-    background-position: right top;  
+    background-position: right bottom; 
 }
 .consulta-page {
     background-image: url(../assets/vetor-bottom-right.svg);
@@ -20,7 +20,7 @@ main {
 }
 
 .cadastro-usuario-page {
-    background-image: url(../assets/vetor-top-right.svg);
+    background-image: url(../assets/vetor-bottom-right.svg);
     background-repeat: no-repeat;
-    background-position: right top;  
+    background-position: right bottom;  
 }

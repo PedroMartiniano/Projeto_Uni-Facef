@@ -2,8 +2,11 @@
 import { useState, useEffect, useCallback } from "react";
 import "./Signin.css";
 import logo from '../../assets/logo-marca.svg';
+import Ordinis from '../../assets/Ordinis.svg';
 import api from "../../lib/axios";
 import { User } from "../../models/user-data";
+import toast, { Toaster } from "react-hot-toast";
+
 
 // classe principal de login 
 const Signin = () => {
@@ -34,21 +37,22 @@ const Signin = () => {
             (usuario.email === user.email && usuario.senha === user.senha) && (verif = true)
         });
         setIsAuthenticated(verif)
+
+        !verif && toast.error("Email ou senha incorretos!")
     }
 
     // verificação da variavel isAuthenticated para redirecionar o usuário para a pagina home
-    (isAuthenticated)
-        ? window.open('/home', "_self") // ? window.location.replace('/home')
-        : console.log("Não autenticado")
+    (isAuthenticated) && window.open('/home', "_self") // ? window.location.replace('/home')
 
     // retorno do html 
     return (
-        <section>
+        <section id="main">
+            <div> <Toaster /> </div>
             <div id="container">
-                <header>
-                    <img src={logo} alt="" />
-                    <h1>ORDINIS</h1>
-                </header>
+                <a className="logo-marca">
+                    <img className="logo" src={logo} alt="logo" width="100" height="95" />
+                    <img className="marca" src={Ordinis} alt="marca" width="167" height="27" />
+                </a>
                 <form className="login" onSubmit={handleSubmit}>
                     <div className="inputContainer">
                         <input

@@ -15,11 +15,11 @@ function Navbar() {
         </li>
         <li className="navbar-item">
           <img src="src\assets\registros.svg" alt="" />
-          <a href="http://localhost:5173/cadastro">Cadastro de Patrimônios</a>
+          <a href="http://localhost:5173/cadastro">Registros</a>
         </li>
         <li className="navbar-item">
           <img src="src\assets\consult-icon.svg" alt="" />
-          <a href="http://localhost:5173/consulta">Consulta de Patrimônios</a>
+          <a href="http://localhost:5173/consulta">Relatórios</a>
         </li>
         <li className="navbar-item">
           <img src="src\assets\config.svg" alt="" />

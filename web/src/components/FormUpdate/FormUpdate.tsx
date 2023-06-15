@@ -102,6 +102,7 @@ function FormUpdate(props: TableData) {
               <label htmlFor="categoria">Categoria</label>
               <select
                 onChange={(event) => setCategoria(parseInt(event.target.value))}
+                value={categoria}
               >
                 {categorias.map((categoria) => (
                   <option value={categoria.id}>{categoria.nm_categoria}</option>
