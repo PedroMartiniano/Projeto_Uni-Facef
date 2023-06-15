@@ -5,7 +5,7 @@ import './Global.css'
 /*Função principal da página de cadastro de patrimônio, onde é chamado o componente de formulário e o componente de navbar. */
 export default function CadastroPatrimonio() {
     return (
-       <main className='cadastro-page'>
+       <main className='pages'>
         <Navbar />
         <Form />
        </main>

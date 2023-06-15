@@ -16,13 +16,11 @@ function DialogCreateCategory(props : any) {
     }
     {/*Função que faz a requisição para criar a categoria. */}
     function createCategoria() {
-
         api
         .post(`/cadastro/${props.tipo}`, novaCategoria)
         .then(() => toast.success("Categoria cadastrada com sucesso!"))
         .catch(() => toast.error("Erro ao cadastrar categoria!"))
     }
-    
 
   return (
     <Dialog.Root>

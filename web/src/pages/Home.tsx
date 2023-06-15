@@ -2,9 +2,9 @@ import Navbar from '../components/Navbar/Navbar'
 import  './Global.css'
 
 /*Função principal da página home, onde é chamado o componente de navbar. */
-export const Home = () =>{
+export default function Home(){
     return (
-    <main className='home-page'>
+    <main className='pages'>
         <Navbar/>
     </main>
     )

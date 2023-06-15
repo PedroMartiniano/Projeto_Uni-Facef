@@ -23,7 +23,7 @@ function Navbar() {
         </li>
         <li className="navbar-item">
           <img src="src\assets\config.svg" alt="" />
-          <a href="#">Configurações</a>
+          <a href="http://localhost:5173/configuracoes">Configurações</a>
         </li>
         <li className="navbar-item">
           <img src="src\assets\create-user.svg" alt="" />
@@ -38,4 +38,5 @@ function Navbar() {
   );
 }
 
+//Exportação do componente de navbar.
 export default Navbar;

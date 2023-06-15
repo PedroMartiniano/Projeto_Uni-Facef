@@ -3,6 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import FormUpdate from "../FormUpdate/FormUpdate";
 import "./DialogUpdate.css";
 
+// Função principal do componente de dialog de atualização, onde é chamado o componente de formulário de atualização do patrimônio.
 function DialogUpdate(props: TableData) {
   return (
     <Dialog.Root>

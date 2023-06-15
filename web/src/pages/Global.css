@@ -3,23 +3,15 @@ main {
     font-family: 'Poppins', sans-serif;
     background-color: var(--white-background);
 }
-.home-page {
-    background-image: url(../assets/vetor-bottom-right.svg);
-    background-repeat: no-repeat;
-    background-position: right bottom;  
-}
-.cadastro-page {
-    background-image: url(../assets/vetor-bottom-right.svg);
-    background-repeat: no-repeat;
-    background-position: right bottom; 
-}
-.consulta-page {
-    background-image: url(../assets/vetor-bottom-right.svg);
-    background-repeat: no-repeat;
-    background-position: right bottom;  
+
+.signinPage {
+    background-color: var(--cor01);
+    background-image: url(../assets/Vector_10.svg), url(../assets/Vector_9.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left bottom, right top;
 }
 
-.cadastro-usuario-page {
+.pages {
     background-image: url(../assets/vetor-bottom-right.svg);
     background-repeat: no-repeat;
     background-position: right bottom;  

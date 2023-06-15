@@ -1,12 +1,10 @@
 //importações
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import "./Signin.css";
 import logo from '../../assets/logo-marca.svg';
 import Ordinis from '../../assets/Ordinis.svg';
-import api from "../../lib/axios";
-import { User } from "../../models/user-data";
 import toast, { Toaster } from "react-hot-toast";
-
+import FetchUsers from "../FormUser/FetchUser";
 
 // classe principal de login 
 const Signin = () => {
@@ -14,26 +12,20 @@ const Signin = () => {
     // criação de variaveis de estado 
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
-    const [dataUser, setDataUser] = useState<User[]>([])
     const [isAuthenticated, setIsAuthenticated] = useState(false)
 
     // criação da variavel usuario que recebe os dados de email e senha
     const usuario = { email, senha }
 
-    // função que faz a requisição dos dados dos usuarios vinda do banco de dados
-    const getUsers = useCallback(() => {
-        api.get('/users').then((response) => { setDataUser(response.data); });
-    }, []);
-
-    // chamada da função getUsers utilizando useEffect
-    useEffect(() => { getUsers() }, [getUsers])
+    //chamada e atribuição da função FetchUsers que resgata todos os usuários do banco de dados a variavel users
+    const users = FetchUsers()
 
     // função que faz a verificação dos dados de email e senha quando o usuário faz o submit
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
         let verif = false
-        dataUser.map((user) => {
+        users.map((user) => {
             (usuario.email === user.email && usuario.senha === user.senha) && (verif = true)
         });
         setIsAuthenticated(verif)
@@ -44,7 +36,7 @@ const Signin = () => {
     // verificação da variavel isAuthenticated para redirecionar o usuário para a pagina home
     (isAuthenticated) && window.open('/home', "_self") // ? window.location.replace('/home')
 
-    // retorno do html 
+    // retorno do html da pagina de login 
     return (
         <section id="main">
             <div> <Toaster /> </div>

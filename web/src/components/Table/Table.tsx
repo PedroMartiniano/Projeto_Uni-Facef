@@ -72,4 +72,5 @@ function Table() {
   );
 }
 
+// Exporta o componente de tabela.
 export default Table;

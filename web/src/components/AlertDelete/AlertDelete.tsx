@@ -33,7 +33,7 @@ function AlertDelete(props: TableData) {
         <AlertDialog.Overlay className="alert-overlay" />
         <AlertDialog.Content className="alert-content">
           <AlertDialog.Title className="alert-title">
-            Você tem certeza que deseja excluir o registro ?
+            Você tem certeza que deseja excluir o registro?
           </AlertDialog.Title>
           <AlertDialog.Description className="AlertDialogDescription">
             Está ação não pode ser desfeita. O patrimonio: {props.placa} será

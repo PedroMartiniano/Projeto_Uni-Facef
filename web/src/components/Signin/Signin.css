@@ -10,13 +10,6 @@
   --fonte-titulo: 'Roboto Mono', Arial, sans-serif;
 }
 
-body {
-  background-color: var(--cor01);
-  background-image: url(../../assets/Vector_10.svg), url(../../assets/Vector_9.svg);
-  background-repeat: no-repeat, no-repeat;
-  background-position: left bottom, right top;
-}
-
 section#main {
   display: flex;
   flex-direction: row;

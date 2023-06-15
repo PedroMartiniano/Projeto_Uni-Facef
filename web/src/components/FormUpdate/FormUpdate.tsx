@@ -179,4 +179,5 @@ function FormUpdate(props: TableData) {
   );
 }
 
+//Exporta o componente FormUpdate
 export default FormUpdate;

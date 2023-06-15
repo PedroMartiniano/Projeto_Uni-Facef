@@ -170,15 +170,19 @@ export default async function appRoutes(app: FastifyInstance) {
     });
   });
 
+  // Rota para cadastrar um novo usuário
   app.post('/user', async (request) => {
+    // Define o formato dos dados que serão recebidos
     const createUser = z.object({
       email: z.string(),
       nome: z.string(),
       senha: z.string()
     })
 
+    // Extrai os dados da requisição e valida o formato
     const { email, nome, senha } = createUser.parse(request.body)
 
+    // Cria um novo usuário no banco de dados
     const newUser = await prisma.user.create({
       data: {
         email,
@@ -187,29 +191,39 @@ export default async function appRoutes(app: FastifyInstance) {
       }
     })
 
+    // Retorna o usuário criado
     return newUser
   })
 
+  // Rota para consultar todos os usuários cadastrados no banco de dados
   app.get('/users', async () => {
+    // Consulta os usuários cadastrados no banco de dados
     const users = await prisma.user.findMany()
+    // Retorna os usuários
     return users
   })
 
+  // Rota para deletar um usuário especifico pelo seu id no banco de dados
   app.delete('/user/:id', async (request) => {
+    // Define o formato do id que será recebido
     const idParam = z.object({
         id: z.string()
     })
 
+    // Extrai o id da requisição e valida o formato
     const { id } = idParam.parse(request.params)
 
+    // Converte o id para o tipo number
     const idNumber = Number(id)
 
+    // Deleta o usuário no banco de dados
     const userDeleted = await prisma.user.delete({
         where: {
             id: idNumber
         }
     })
 
+    // Retorna o usuário deletado
     return userDeleted
 })
 }
