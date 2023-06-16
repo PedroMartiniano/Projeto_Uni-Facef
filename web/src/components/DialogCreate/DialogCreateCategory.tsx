@@ -36,10 +36,10 @@ function DialogCreateCategory(props : any) { // eslint-disable-line @typescript-
           {/* Formulário de criação de categoria. */}
           <div>
           <label>Nome da nova {props.tipo}:</label>
-          <input type="text" onChange={(event) => setCategoria(event.target.value)} />
+          <input className="create-input" type="text" onChange={(event) => setCategoria(event.target.value)} />
           </div>
           {/* Botão que chama a função de criar a categoria. */}
-          <button type="submit" onClick={createCategoria}>Adicionar</button>
+          <button className="create-button" type="submit" onClick={createCategoria}>Adicionar</button>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

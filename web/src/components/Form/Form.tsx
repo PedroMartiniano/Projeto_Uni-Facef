@@ -9,23 +9,23 @@ import DialogCreateLocation from "../DialogCreate/DialogCreateLocation";
 /*Função principal do componente de formulário, onde é chamado o componente de dialog de criação de categoria, o componente de dialog de criação de localização e o componente de toast do react-hot-toast. */
 function Form() {
 
-  {/*Hooks que armazenam os valores das categorias e das localizações. */}
+  {/*Hooks que armazenam os valores das categorias e das localizações. */ }
   const [categorias, setCategorias] = useState<CategoryData[]>([]);
   const [localizacoes, setLocalizacoes] = useState<LocationData[]>([]);
 
-  {/*Funções que fazem as requisições para pegar as categorias e as localizações. */}
+  {/*Funções que fazem as requisições para pegar as categorias e as localizações. */ }
   function getCategorias() {
-    api.get("/consulta/categoria").then((response) => {setCategorias(response.data)})
+    api.get("/consulta/categoria").then((response) => { setCategorias(response.data) })
   }
 
-   function getLocalizacoes() {
-    api.get("/consulta/localizacao").then((response) => {setLocalizacoes(response.data)})
+  function getLocalizacoes() {
+    api.get("/consulta/localizacao").then((response) => { setLocalizacoes(response.data) })
   }
 
-  {/*Hook que executa as funções que buscam as categorias e as localizações */}
-  useEffect(() =>{getCategorias(), getLocalizacoes()}, [])
+  {/*Hook que executa as funções que buscam as categorias e as localizações */ }
+  useEffect(() => { getCategorias(), getLocalizacoes() }, [])
 
-  {/*Hooks que armazenam os valores dos campos do formulário. */}
+  {/*Hooks que armazenam os valores dos campos do formulário. */ }
   const [placa, setPlaca] = useState("");
   const [descricao, setDescricao] = useState("");
   const [categoria, setCategoria] = useState(0);
@@ -34,7 +34,7 @@ function Form() {
   const [valor, setValor] = useState(0);
   const [localizacao, setLocalizacao] = useState(0);
 
-  {/*Objeto que armazena os valores dos campos do formulário. */}
+  {/*Objeto que armazena os valores dos campos do formulário. */ }
   const patrimonio = {
     placa,
     descricao,
@@ -96,7 +96,13 @@ function Form() {
             <label>Data de entrada</label>
             <input
               type="date"
-              onChange={(event) => setDataEntrada(event.target.value)}
+              // o cadastro de data, estava sempre cadastrando um dia a menos, então manualmente adicionamos um dia a mais
+              onChange={(event) => {
+                const selectedDate = new Date(event.target.value);
+                selectedDate.setDate(selectedDate.getDate() + 1); // Adiciona um dia à data selecionada
+                const formattedDate = selectedDate.toISOString().split("T")[0];
+                setDataEntrada(formattedDate);
+              }}
             />
           </li>
           <li className="form-item">
@@ -121,7 +127,7 @@ function Form() {
           <li className="form-item">
             <label>Localização</label>
             {/*Chamada do componente de dialog de criação de localização. */}
-            <DialogCreateLocation tipo="Localização"/>
+            <DialogCreateLocation tipo="Localização" />
             {/*Select que mostra as localizações cadastradas. */}
             <select onChange={(event) => setLocalizacao(parseInt(event.target.value))}>
               {localizacoes.map((localizacao) => (

@@ -5,6 +5,7 @@ import api from "../../lib/axios";
 import toast from "react-hot-toast";
 
 /*Função principal do componente de criação de localização, onde é chamado o componente de dialog do radix-ui e o componente de toast do react-hot-toast. */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function DialogCreateLocation(props : any) {
 
     {/*Hook que armazena o valor da localização. */}
@@ -39,10 +40,10 @@ function DialogCreateLocation(props : any) {
           {/* Formulário de criação de localização. */}
           <div>
           <label>Nome da nova {props.tipo}:</label>
-          <input type="text" onChange={(event) => setLocalizacao(event.target.value)} />
+          <input className="create-input" type="text" onChange={(event) => setLocalizacao(event.target.value)} />
           </div>
           {/* Botão que chama a função de criar a localização. */}
-          <button type="submit" onClick={createLocalizacao}>Adicionar</button>
+          <button className="create-button" type="submit" onClick={createLocalizacao}>Adicionar</button>
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
