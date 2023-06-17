@@ -72,8 +72,6 @@ function Form() {
   }
   function createPatrimonio(event: FormEvent) {
     event.preventDefault();
-    console.log(categorias[0]);
-    console.log(patrimonio);
     api
       .post("/cadastro", patrimonio)
       .then(() => toast.success("Patrimônio cadastrado com sucesso!"))

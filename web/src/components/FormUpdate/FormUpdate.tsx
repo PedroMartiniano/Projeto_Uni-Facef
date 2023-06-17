@@ -115,11 +115,7 @@ function FormUpdate(props: TableData) {
                 type="date"
                 name="dataEntrada"
                 id="dataEntrada"
-                onChange={(event) => {
-                  const selectedDate = new Date(event.target.value);
-                  selectedDate.setDate(selectedDate.getDate() + 1); // Adiciona um dia à data selecionada
-                  const formattedDate = selectedDate.toISOString().split("T")[0];
-                  setDataEntrada(formattedDate);
+                onChange={(event) => {setDataEntrada(event.target.value);
                 }}
               />
             </li>
