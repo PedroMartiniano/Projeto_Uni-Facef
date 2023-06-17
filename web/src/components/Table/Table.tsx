@@ -20,7 +20,7 @@ function Table() {
   useEffect(() => {
     getTableData();
   }, []);
-
+  console.log(tableData)
   return (
     <div className="table-container">
       {/*Cabeçalho da tabela. */}
@@ -50,7 +50,7 @@ function Table() {
                 <td>{data.placa}</td>
                 <td>{data.descricao}</td>
                 <td>{data.nm_categoria}</td>
-                <td>{new Date(data.dataEntrada).toLocaleDateString()}</td>
+                <td>{new Date(new Date(data.dataEntrada).getTime() + new Date().getTimezoneOffset() * 60000).toLocaleDateString('pt-BR')}</td>
                 <td>{data.estado}</td>
                 <td>{data.valor}</td>
                 <td>{data.status}</td>
