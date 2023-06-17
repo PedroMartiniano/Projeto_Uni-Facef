@@ -7,7 +7,7 @@ import ConsultaPatrimonio from "./pages/ConsultaPatrimonio";
 import CadastroUsuario from "./pages/CadastroUsuario";
 import Configuracoes from "./pages/Configuracoes";
 
-// Função que define todas as rotas do sistema
+// Função que define todas as rotas do sistema usando o react-router-dom
 export const PagesRoutes = () => {
   return (
     <Router>

@@ -203,13 +203,18 @@ export default async function appRoutes(app: FastifyInstance) {
     return users
   })
 
+  // rota para verificar se o usuário existe no banco de dados, usado para login, e verificação para criar um novo usuário
   app.post('/user/verif', async (request) => {
+    // Define o formato dos dados que serão recebidos
     const verifBody = z.object({
       email: z.string(),
       senha: z.string()
     })
 
+    // Extrai os dados da requisição e valida o formato
     const { email, senha } = verifBody.parse(request.body)
+
+    // Verifica se o usuário existe no banco de dados pela função findFirst
     const verif = await prisma.user.findFirst({
       where: {
         email,
@@ -218,6 +223,7 @@ export default async function appRoutes(app: FastifyInstance) {
 
     })
 
+    // retorna null caso o usuário não exista no banco de dados, ou retorna o usuário caso encontrado
     return verif
   })
 
