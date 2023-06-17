@@ -4,7 +4,7 @@ import "./Signin.css";
 import logo from '../../assets/logo-marca.svg';
 import Ordinis from '../../assets/Ordinis.svg';
 import toast, { Toaster } from "react-hot-toast";
-import FetchUsers from "../FormUser/FetchUser";
+import api from "../../lib/axios";
 
 // classe principal de login 
 const Signin = () => {
@@ -17,20 +17,20 @@ const Signin = () => {
     // criação da variavel usuario que recebe os dados de email e senha
     const usuario = { email, senha }
 
-    //chamada e atribuição da função FetchUsers que resgata todos os usuários do banco de dados a variavel users
-    const users = FetchUsers()
-
     // função que faz a verificação dos dados de email e senha quando o usuário faz o submit
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        let verif = false
-        users.map((user) => {
-            (usuario.email === user.email && usuario.senha === user.senha) && (verif = true)
-        });
-        setIsAuthenticated(verif)
-
-        !verif && toast.error("Email ou senha incorretos!")
+        // verificação se o email e senha digitados já estão cadastrados no banco de dados pelo retorno da rota
+        const verif = await api.post('user/verif', usuario)
+        
+        // caso encontrado, verif.data será o objeto do usuário encontrado, caso não encontrado, verif.data será null
+        if(verif.data){
+            setIsAuthenticated(true)
+        }
+        else{
+            toast.error("Email ou senha incorretos!")
+        }
     }
 
     // verificação da variavel isAuthenticated para redirecionar o usuário para a pagina home

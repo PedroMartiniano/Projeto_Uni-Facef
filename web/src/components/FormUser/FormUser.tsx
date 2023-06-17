@@ -1,5 +1,4 @@
 // importações
-import FetchUsers from "./FetchUser"
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import api from "../../lib/axios";
@@ -13,26 +12,18 @@ export default function FormUsuario() {
     const [senha, setSenha] = useState('')
     const [senhaConf, setSenhaConf] = useState('')
 
-    // atribuição da função FetchUsers que resgata todos os usuários do banco de dados a variavel users
-    const users = FetchUsers()
-
     // criação do objeto usuario que recebe os dados de email, nome e senha que o usuário digitou
     const usuario = { email, nome, senha }
 
     //função que faz a verificação dos dados de email e senha quando o usuário faz o submit
-    const formSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const formSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
 
-        // verificação se o email digitado já está cadastrado no banco de dados
-        const verif = users.map((user) => {
-            if (user.email === usuario.email) {
-                return true
-            }
-            return false
-        }).includes(true)
+        // verificação se o email digitado já está cadastrado no banco de dados pelo retorno da rota
+        const verif = await api.post('user/verif', usuario)
 
         // verificação se a senha e a confirmação de senha são iguais, após a verificação do email pela variavel verif        
-        if (!verif) {
+        if (!verif.data) {
             (senha === senhaConf)
                 ? api.post('/user', usuario)
                     .then(() => toast.success("Usuário cadastrado com sucesso!"))

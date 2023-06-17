@@ -203,11 +203,29 @@ export default async function appRoutes(app: FastifyInstance) {
     return users
   })
 
+  app.post('/user/verif', async (request) => {
+    const verifBody = z.object({
+      email: z.string(),
+      senha: z.string()
+    })
+
+    const { email, senha } = verifBody.parse(request.body)
+    const verif = await prisma.user.findFirst({
+      where: {
+        email,
+        senha
+      }
+
+    })
+
+    return verif
+  })
+
   // Rota para deletar um usuário especifico pelo seu id no banco de dados
   app.delete('/user/:id', async (request) => {
     // Define o formato do id que será recebido
     const idParam = z.object({
-        id: z.string()
+      id: z.string()
     })
 
     // Extrai o id da requisição e valida o formato
@@ -218,12 +236,12 @@ export default async function appRoutes(app: FastifyInstance) {
 
     // Deleta o usuário no banco de dados
     const userDeleted = await prisma.user.delete({
-        where: {
-            id: idNumber
-        }
+      where: {
+        id: idNumber
+      }
     })
 
     // Retorna o usuário deletado
     return userDeleted
-})
+  })
 }
