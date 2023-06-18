@@ -32,7 +32,7 @@ const Signin = () => {
             toast.error("Email ou senha incorretos!")
         }
     }
-
+    
     // verificação da variavel isAuthenticated para redirecionar o usuário para a pagina home
     (isAuthenticated) && window.open('/home', "_self") // ? window.location.replace('/home')
 
