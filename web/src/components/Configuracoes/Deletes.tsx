@@ -1,4 +1,4 @@
-import { useState, FormEvent, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { CategoryData, LocationData } from "../../models/auxiliary-data";
 import toast, { Toaster } from "react-hot-toast";
 import api from "../../lib/axios";
