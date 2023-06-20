@@ -15,7 +15,7 @@ function Navbar() {
         </li>
         <li className="navbar-item">
           <img src="src\assets\registros.svg" alt="" />
-          <a href="http://localhost:5173/cadastro">Registros</a>
+          <a href="http://localhost:5173/registros">Registros</a>
         </li>
         <li className="navbar-item">
           <img src="src\assets\consult-icon.svg" alt="" />
