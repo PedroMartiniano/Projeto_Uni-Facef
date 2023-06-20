@@ -5,7 +5,7 @@ import Deletes from './Deletes';
 export default function Configs() {
     return (
         <div id="config">
-            <h1>Configurações em desevolvimento...</h1>
+            <h1>Configurações restantes em desevolvimento...</h1>
             <Deletes />
         </div>
     )

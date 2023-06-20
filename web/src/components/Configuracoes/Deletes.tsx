@@ -47,7 +47,10 @@ export default function Deletes() {
     }
 
     return (
-        <div>
+        <div className="deleteForm">
+            <div>
+                <Toaster />
+            </div>
             <ul>
                 <li className="form-item">
                     <label>Deletar Categoria:</label>
@@ -59,7 +62,7 @@ export default function Deletes() {
                             <option value={categoria.id}>{categoria.nm_categoria}</option>
                         ))}
                     </select>
-                    <button className="deleteButton" onClick={deleteCategory()}>Deletar Categoria</button>
+                    <button className="deleteButton" onClick={deleteCategory}>Deletar Categoria</button>
                 </li>
                 <li className="form-item">
                     <label>Deletar Localização:</label>
@@ -71,7 +74,7 @@ export default function Deletes() {
                             <option value={localizacao.id}>{localizacao.nm_sala}</option>
                         ))}
                     </select>
-                    <button className="deleteButton" onClick={deleteLocation()}>Deletar Localização</button>
+                    <button className="deleteButton" onClick={deleteLocation}>Deletar Localização</button>
                 </li>
             </ul>
         </div>
