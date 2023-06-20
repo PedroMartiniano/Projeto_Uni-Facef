@@ -4,7 +4,7 @@
     align-items: center;
     height: 100vh;
     width: 15%;
-    background-color: var(--primary-color);
+    background-color: #424d67;
     border-radius: 0px 40px 40px 0px;
 }
 .navbar-logo {
@@ -29,7 +29,7 @@
     margin: 8px 0;
 }
 .navbar-item:hover {
-    background: #211D26;
+    background: #303646;
     border-radius: 4px;
 }
 .navbar-item a {
