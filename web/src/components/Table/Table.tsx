@@ -28,13 +28,13 @@ function Table() {
         <thead className="table-header">
           <tr>
             <th>Placa</th>
-            <th>Descricao</th>
+            <th>Descrição</th>
             <th>Categoria</th>
             <th>Data de Entrada</th>
             <th>Estado</th>
             <th>Valor</th>
             <th>Status</th>
-            <th>Localizacao</th>
+            <th>Localização</th>
             <th></th>
             <th></th>
           </tr>
