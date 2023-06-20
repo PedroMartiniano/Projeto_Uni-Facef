@@ -170,6 +170,7 @@ export default async function appRoutes(app: FastifyInstance) {
     });
   });
 
+  // Rota para deletar uma categoria
   app.delete("/deletar/categoria/:id", async (request) => {
     /* Define o formato do id que será recebido */
     const deletarCategoria = z.object({
@@ -187,6 +188,7 @@ export default async function appRoutes(app: FastifyInstance) {
     });
   });
 
+  // Rota para deletar uma localização
   app.delete("/deletar/localizacao/:id", async (request) => {
     /* Define o formato do id que será recebido */
     const deletarLocalizacao = z.object({

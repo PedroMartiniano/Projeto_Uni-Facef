@@ -8,15 +8,11 @@ import DialogCreateLocation from "../DialogCreate/DialogCreateLocation";
 
 /*Função principal do componente de formulário, onde é chamado o componente de dialog de criação de categoria, o componente de dialog de criação de localização e o componente de toast do react-hot-toast. */
 function Form() {
-  {
-    /*Hooks que armazenam os valores das categorias e das localizações. */
-  }
+  {/*Hooks que armazenam os valores das categorias e das localizações. */}
   const [categorias, setCategorias] = useState<CategoryData[]>([]);
   const [localizacoes, setLocalizacoes] = useState<LocationData[]>([]);
 
-  {
-    /*Funções que fazem as requisições para pegar as categorias e as localizações. */
-  }
+  {/*Funções que fazem as requisições para pegar as categorias e as localizações. */}
   function getCategorias() {
     api.get("/consulta/categoria").then((response) => {
       setCategorias(response.data);
@@ -35,16 +31,12 @@ function Form() {
     });
   }
 
-  {
-    /*Hook que executa as funções que buscam as categorias e as localizações */
-  }
+  {/*Hook que executa as funções que buscam as categorias e as localizações */}
   useEffect(() => {
     getCategorias(), getLocalizacoes();
   }, []);
 
-  {
-    /*Hooks que armazenam os valores dos campos do formulário. */
-  }
+  {/*Hooks que armazenam os valores dos campos do formulário. */}
   const [placa, setPlaca] = useState("");
   const [descricao, setDescricao] = useState("");
   const [categoria, setCategoria] = useState(0);
@@ -53,9 +45,7 @@ function Form() {
   const [valor, setValor] = useState(0);
   const [localizacao, setLocalizacao] = useState(0);
 
-  {
-    /*Objeto que armazena os valores dos campos do formulário. */
-  }
+  {/*Objeto que armazena os valores dos campos do formulário. */}
   const patrimonio = {
     placa,
     descricao,
@@ -67,9 +57,7 @@ function Form() {
     status: "Ativo",
   };
 
-  {
-    /*Função que faz a requisição para criar o patrimônio. */
-  }
+  {/*Função que faz a requisição para criar o patrimônio. */}
   function createPatrimonio(event: FormEvent) {
     event.preventDefault();
     api

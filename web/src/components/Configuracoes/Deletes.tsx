@@ -4,10 +4,13 @@ import toast, { Toaster } from "react-hot-toast";
 import api from "../../lib/axios";
 import './Deletes.css';
 
+// função principal dos componentes de delete de categoria e de localização, localizados nas configurações.
 export default function Deletes() {
+    // hooks que armazenam os valores das categorias e das localizações do banco de dados.
     const [categorias, setCategorias] = useState<CategoryData[]>([]);
     const [localizacoes, setLocalizacoes] = useState<LocationData[]>([]);
 
+    // funções que fazem as requisições para pegar as categorias e as localizações dos bancos de dados.
     function getCategorias() {
         api.get("/consulta/categoria").then((response) => {
             setCategorias(response.data);
@@ -26,26 +29,29 @@ export default function Deletes() {
         });
     }
 
+    // hook que executa as funções que buscam as categorias e as localizações.
     useEffect(() => {
         getCategorias(), getLocalizacoes();
-      }, []);
+    }, []);
 
+    // hooks que armazenam os valores de categoria e localização dos campos dos formulários.
     const [categoria, setCategoria] = useState(0);
     const [localizacao, setLocalizacao] = useState(0);
-    
 
-    function deleteCategory(): any {
+    // funções que deletam as categorias e as localizações dos bancos de dados.
+    function deleteCategory(): any {// eslint-disable-line @typescript-eslint/no-explicit-any
         api.delete(`deletar/categoria/${categoria}`)
-            .then(() => {toast.success("Categoria deletada com sucesso!");})
-            .catch(() => {toast.error("Erro ao deletar categoria!");});
+            .then(() => { toast.success("Categoria deletada com sucesso!"); })
+            .catch(() => { toast.error("Erro ao deletar categoria!"); });
     }
 
-    function deleteLocation(): any {
+    function deleteLocation(): any { // eslint-disable-line @typescript-eslint/no-explicit-any
         api.delete(`deletar/localizacao/${localizacao}`)
-            .then(() => {toast.success("Localização deletada com sucesso!");})
-            .catch(() => {toast.error("Erro ao deletar localização!");});
+            .then(() => { toast.success("Localização deletada com sucesso!"); })
+            .catch(() => { toast.error("Erro ao deletar localização!"); });
     }
 
+    // retorno do html dos formulários de delete de categoria e de localização.
     return (
         <div className="deleteForm">
             <div>
