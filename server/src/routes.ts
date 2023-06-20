@@ -170,6 +170,40 @@ export default async function appRoutes(app: FastifyInstance) {
     });
   });
 
+  app.delete("/deletar/categoria/:id", async (request) => {
+    /* Define o formato do id que será recebido */
+    const deletarCategoria = z.object({
+      id: z.string().transform((value) => Number(value)),
+    });
+
+    /* Extrai o id da requisição e valida o formato */
+    const { id } = deletarCategoria.parse(request.params);
+
+    /* Deleta a categoria no banco de dados */
+    await prisma.categoria.delete({
+      where: {
+        id: id,
+      },
+    });
+  });
+
+  app.delete("/deletar/localizacao/:id", async (request) => {
+    /* Define o formato do id que será recebido */
+    const deletarLocalizacao = z.object({
+      id: z.string().transform((value) => Number(value)),
+    });
+
+    /* Extrai o id da requisição e valida o formato */
+    const { id } = deletarLocalizacao.parse(request.params);
+
+    /* Deleta a localização no banco de dados */
+    await prisma.localizacao.delete({
+      where: {
+        id: id,
+      },
+    });
+  });
+
   // Rota para cadastrar um novo usuário
   app.post('/user', async (request) => {
     // Define o formato dos dados que serão recebidos

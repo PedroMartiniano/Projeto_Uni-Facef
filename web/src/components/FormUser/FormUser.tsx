@@ -1,4 +1,5 @@
 // importações
+import { FormEvent } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { useState } from "react";
 import api from "../../lib/axios";
@@ -16,7 +17,7 @@ export default function FormUsuario() {
     const usuario = { email, nome, senha }
 
     //função que faz a verificação dos dados de email e senha quando o usuário faz o submit
-    const formSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const formSubmit = async (event: FormEvent) => {
         event.preventDefault()
 
         // verificação se o email digitado já está cadastrado no banco de dados pelo retorno da rota

@@ -1,5 +1,5 @@
 //importações
-import { useState } from "react";
+import { useState, FormEvent } from "react";
 import "./Signin.css";
 import logo from '../../assets/logo-marca.svg';
 import Ordinis from '../../assets/Ordinis.svg';
@@ -18,7 +18,7 @@ const Signin = () => {
     const usuario = { email, senha }
 
     // função que faz a verificação dos dados de email e senha quando o usuário faz o submit
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: FormEvent) => {
         event.preventDefault()
 
         // verificação se o email e senha digitados já estão cadastrados no banco de dados pelo retorno da rota
