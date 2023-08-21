@@ -3,11 +3,11 @@ import "./Navbar.css";
 /*Função principal do componente de navbar. */
 function Navbar() {
   return (
-    
+
     <div className="navbar-container">
       {/*Botões que redirecionam para as páginas de cadastro e consulta. */}
       <img src="src\assets\logo.svg" alt="" className="navbar-logo" />
-      <img src="src\assets\Ordinis.svg" alt="" className="navbar-title"/>
+      <img src="src\assets\Ordinis.svg" alt="" className="navbar-title" />
       <ul className="navbar-list">
         <li className="navbar-item">
           <img src="src\assets\home-icon.svg" alt="" />
